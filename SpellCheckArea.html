@@ -5,39 +5,9 @@
 			height: 100%;
 		}
 	</style>
-	<script type="text/javascript">		
-		function getArea(){
-			return document.getElementsByTagName('textarea')[0];
-		}
-	
-		function isChrome(){
-			return navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-		}
-		
-		function moveCursorThroughText(){
-			var area = getArea();
-			for(var index = 0; index<area.value.length; index++)
-			{
-				area.setSelectionRange(index, index);
-			}
-		}
-		
-		function onPaste(){
-			var area=getArea();
-			if(area.value.length > 0)
-			{
-				setTimeout(moveCursorThroughText, 10);
-			}
-		}
-		
+	<script type="text/javascript">
 		function onLoad(){
-			var area = getArea();
-			
-			area.focus();
-			
-			if(isChrome()){			
-				area.onpaste = onPaste;
-			}
+			document.getElementsByTagName('textarea')[0].focus();
 		}
 	</script>
 </head>
